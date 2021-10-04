@@ -2,7 +2,10 @@ import os
 
 from flask import Flask
 from srs.auth import auth
+from srs.person.list import person_list
+from srs.person.detail import person_detail
 from srs.db import init_db
+
 
 def create_app(test_config=None):
     # create and configure the app
@@ -26,6 +29,8 @@ def create_app(test_config=None):
         pass
 
     app.register_blueprint(auth)
+    app.register_blueprint(person_list)
+    app.register_blueprint(person_detail)
 
     db.init_app(app)
 

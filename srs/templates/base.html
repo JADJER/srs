@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <title>{% block title %}{% endblock %} - Student Registration System</title>
-    {% block head %}{% endblock %}
+    {% block header %}{% endblock %}
 </head>
 <body>
 {% block content %}{% endblock %}
-{% block footer %}&copy; Copyright 2010 by <a href="http://domain.invalid/">you</a>.{% endblock %}
+{% block footer %}{% endblock %}
 </body>
 </html>
