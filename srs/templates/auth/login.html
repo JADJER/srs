@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for("static", filename="auth/style.css") }}">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+{% endblock %}
+
+<!------ Include the above in your HEAD tag ---------->
+{% block content %}
+<div class="container login-container">
+    <div class="login-form-1">
+        <h3>Login</h3>
+        <form method="post">
+            <div class="form-group">
+                <input type="text" name="username" class="form-control" placeholder="Your Username *" value=""/>
+            </div>
+            <div class="form-group">
+                <input type="password" name="password" class="form-control" placeholder="Your Password *" value=""/>
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btnSubmit" value="Login"/>
+            </div>
+            <div class="form-group">
+                <a href="#" class="ForgetPwd">Forget Password?</a>
+            </div>
+        </form>
+        <div>
+            {% for message in get_flashed_messages() %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+{% endblock %}
